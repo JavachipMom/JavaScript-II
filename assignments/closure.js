@@ -4,6 +4,13 @@
 // that manipulates variables defined in the outer scope.
 // The outer scope can be a parent function, or the top level of the script.
 
+let webPt11_jeff = ['Adrian', 'Brian', 'Shaurice', 'Bret', 'Leisha', 'Samuel', 'Dak', 'Samet']
+function allStudents () {
+  return webPt11_jeff.sort();
+};
+
+console.log(allStudents());
+
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
