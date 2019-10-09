@@ -9,7 +9,7 @@ function allStudents () {
   return webPt11_jeff.sort();
 };
 
-console.log(allStudents());
+console.log("Jeffrey's group of students include all the cool kids named " + allStudents() + " and we love Javascript!!");
 
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
