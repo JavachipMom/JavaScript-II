@@ -58,28 +58,74 @@ const runners = [
 // ==== Challenge 1: Use .forEach() ====
 // The event director needs both the first and last names of each runner for their running bibs. Combine both the first and last names and populate a new array called `fullNames`. This array will contain just strings.
 let fullNames = [];
+runners.forEach(runner => {
+fullNames.push(runner.first_name + " " + runner.last_name);
+})
 console.log(fullNames);
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runners' first names in uppercase because the director BECAME DRUNK WITH POWER. Populate an array called `firstNamesAllCaps`. This array will contain just strings.
 let firstNamesAllCaps = [];
+runners.map(runner => {
+  firstNamesAllCaps.push(runner.first_name.toUpperCase());
+})
+// runners.map(firstNamesAllCaps = )
+
 console.log(firstNamesAllCaps);
+
+
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue. We need a filtered version of the runners array, containing only those runners with large sized shirts so they can choose a different size. This will be an array of objects.
 let runnersLargeSizeShirt = [];
+runnersLargeSizeShirt.push(runners.filter(runners => {
+  return runners.shirt_size === "L";
+}));
+
 console.log(runnersLargeSizeShirt);
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations and save the total into a ticketPriceTotal variable.
 let ticketPriceTotal = 0;
+
+ticketPriceTotal = runners.reduce((accumalator, runner) => {
+  return accumalator + runner.donation;
+}, 0);
+
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
-// Problem 1
+// Problem 1---------------------------------------------------------------------------------
+let runnersLastName = [];
 
-// Problem 2
+runners.forEach(runner => {
+  return runnersLastName.push(runner.last_name);
+})
 
-// Problem 3
+console.log(runnersLastName.sort());
+// Problem 2---------------------------------------------------------------------------------
+let companyNames = [];
+
+companyNames.push(runners.filter(runner => {
+  if (runner.company_name.includes("S")){
+    return runner.company_name
+  }
+  return runner.company_name === "S"
+}));
+
+console.log(companyNames);
+
+// Problem 3---------------------------------------------------------------------------------
+let topDonators = [];
+
+topDonators = runners.filter(donators => {
+  if (donators.donation > 200){
+    return true;
+  } else {
+    return false;
+  }
+});
+
+console.log(topDonators.sort((a, b) => (b.donation - a.donation)));
